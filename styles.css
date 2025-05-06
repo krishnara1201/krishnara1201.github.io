@@ -747,3 +747,10 @@ footer {
         height: 350px;
     }
 }
+
+@media (pointer: coarse) {
+    .cursor, .cursor-follower {
+      display: none; /* This hides the custom cursor on touch devices */
+    }
+  }
+  
