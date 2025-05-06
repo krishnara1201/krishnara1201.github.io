@@ -128,7 +128,7 @@ section {
     position: fixed;
     width: 10px;
     height: 10px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -140,7 +140,7 @@ section {
     position: fixed;
     width: 40px;
     height: 40px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--secondary-color);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -350,10 +350,6 @@ nav ul li a.active:after {
 }
 
 /* Work Section */
-.work {
-    background: var(--light-background);
-}
-
 .projects {
     display: flex;
     flex-direction: column;
@@ -443,6 +439,11 @@ nav ul li a.active:after {
 }
 
 /* About Section */
+
+.about {
+    background: var(--light-background);
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
