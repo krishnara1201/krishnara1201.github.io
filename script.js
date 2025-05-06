@@ -1,58 +1,63 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-        });
-    });
-});
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // In a real scenario, you would send the form data to a server
-        // This is just a simulation
-        const formData = {
-            name: this.querySelector('#name').value,
-            email: this.querySelector('#email').value,
-            message: this.querySelector('#message').value
-        };
-        
-        console.log('Form submitted:', formData);
-        
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        
-        // Reset form
-        this.reset();
-    });
-}
-
-// Add scroll animation for elements
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section');
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
     
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (sectionTop < windowHeight * 0.75) {
-            section.classList.add('active');
-        }
+    setTimeout(() => {
+        cursorFollower.style.left = e.clientX + 'px';
+        cursorFollower.style.top = e.clientY + 'px';
+    }, 50);
+});
+
+// Enlarge cursor on hoverable elements
+const hoverables = document.querySelectorAll('a, button, .project-img, .social-links a');
+hoverables.forEach(hoverable => {
+    hoverable.addEventListener('mouseenter', () => {
+        cursor.style.width = '20px';
+        cursor.style.height = '20px';
+        cursorFollower.style.width = '50px';
+        cursorFollower.style.height = '50px';
+    });
+    hoverable.addEventListener('mouseleave', () => {
+        cursor.style.width = '10px';
+        cursor.style.height = '10px';
+        cursorFollower.style.width = '40px';
+        cursorFollower.style.height = '40px';
     });
 });
 
-// Add active class to current navigation item
-window.addEventListener('scroll', function() {
+// Header scroll effect
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+    });
+});
+
+// Active link highlighting
+window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
     
@@ -62,7 +67,7 @@ window.addEventListener('scroll', function() {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (pageYOffset >= (sectionTop - 100)) {
+        if (pageYOffset >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
     });
@@ -75,22 +80,58 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Add typing effect to hero section
-document.addEventListener('DOMContentLoaded', function() {
-    const heroTitle = document.querySelector('.hero-content h2');
-    if (heroTitle) {
-        const text = heroTitle.innerHTML;
-        heroTitle.innerHTML = '';
+// Scroll reveal animation
+const revealElements = document.querySelectorAll('.project, .about-grid, .contact-grid, .section-header');
+
+const revealElement = () => {
+    revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
         
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                heroTitle.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('revealed');
         }
+    });
+};
+
+window.addEventListener('scroll', revealElement);
+window.addEventListener('load', revealElement);
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         
-        typeWriter();
-    }
-});
+        // In a real scenario, you would send this data to a server
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+        
+        console.log('Form submitted:', formData);
+        
+        // Show success message (you can replace this with a better UI feedback)
+        alert('Thank you for your message! I will get back to you soon.');
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
+
+// Add this to your CSS file
+document.head.insertAdjacentHTML('beforeend', `
+<style>
+.project, .about-grid, .contact-grid, .section-header {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.project.revealed, .about-grid.revealed, .contact-grid.revealed, .section-header.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+`);
