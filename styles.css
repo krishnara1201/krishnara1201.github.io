@@ -2,7 +2,7 @@
     --primary-color: #0d1321;
     --secondary-color: #1d2d44;
     --text-color: #2d3436;
-    --light-text: #636e72;
+    --light-text: #9bacb3;
     --background: #f0ebd8;
     --light-background: #748cab;
     --border-color: #e1e1e1;
@@ -408,7 +408,7 @@ nav ul li a.active:after {
 }
 
 .project-content p {
-    color: var(--light-text);
+    color: var(--text-color);
     margin-bottom: 30px;
 }
 
@@ -612,7 +612,7 @@ footer {
 }
 
 .footer-content p {
-    color: var(--light-text);
+    color: var(--text-color);
 }
 
 .footer-links {
@@ -621,7 +621,7 @@ footer {
 }
 
 .footer-links a {
-    color: var(--light-text);
+    color: var(--text-color);
     transition: var(--transition);
 }
 
