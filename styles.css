@@ -235,6 +235,7 @@ nav ul li a.active:after {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
+    color: #2c3557;
 }
 
 .hero-content h1 span {
@@ -245,7 +246,7 @@ nav ul li a.active:after {
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 40px;
-    color: var(--light-text);
+    color: var(--text-color);
 }
 
 .hero-cta {
@@ -470,7 +471,7 @@ nav ul li a.active:after {
 
 .about-content p {
     margin-bottom: 20px;
-    color: var(--light-text);
+    color: var(--background);
 }
 
 .skills {
@@ -536,7 +537,7 @@ nav ul li a.active:after {
 }
 
 .details p {
-    color: var(--light-text);
+    color: var(--background);
 }
 
 .social-links {
