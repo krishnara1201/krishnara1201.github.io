@@ -637,7 +637,7 @@ nav ul li a.active:after {
 }
 
 .details p {
-    color: var(--background);
+    color: var(--primary-color);
 }
 
 .social-links {
