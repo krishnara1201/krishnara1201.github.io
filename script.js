@@ -81,7 +81,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Scroll reveal animation
-const revealElements = document.querySelectorAll('.project, .about-grid, .contact-grid, .section-header');
+const revealElements = document.querySelectorAll('.project, .about-grid, .contact-grid, .section-header, .experience');
 
 const revealElement = () => {
     revealElements.forEach(element => {
@@ -123,13 +123,13 @@ if (contactForm) {
 // Add this to your CSS file
 document.head.insertAdjacentHTML('beforeend', `
 <style>
-.project, .about-grid, .contact-grid, .section-header {
+.project, .about-grid, .contact-grid, .experience, .section-header {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.project.revealed, .about-grid.revealed, .contact-grid.revealed, .section-header.revealed {
+.project.revealed,.experience.revealed,.about-grid.revealed, .contact-grid.revealed, .section-header.revealed {
     opacity: 1;
     transform: translateY(0);
 }
