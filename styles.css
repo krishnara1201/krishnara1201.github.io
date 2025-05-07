@@ -120,7 +120,7 @@ section {
 .section-header p {
     max-width: 600px;
     margin: 0 auto;
-    color: var(--background);
+    color: var(--text-color);
 }
 
 /* Cursor */
@@ -399,17 +399,18 @@ nav ul li a.active:after {
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 15px;
 }
 
 .experience-content h3 {
     font-size: 28px;
     margin-bottom: 20px;
+    color: var(--secondary-color);
 }
 
 .experience-content p {
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-bottom: 30px;
 }
 
