@@ -101,14 +101,6 @@ window.addEventListener('load', revealElement);
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // In a real scenario, you would send this data to a server
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
         
         console.log('Form submitted:', formData);
         
