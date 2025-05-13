@@ -101,14 +101,32 @@ window.addEventListener('load', revealElement);
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent default form submission
         
-        console.log('Form submitted:', formData);
+        // Create FormData object
+        const formData = new FormData(contactForm);
         
-        // Show success message (you can replace this with a better UI feedback)
-        alert('Thank you for your message! I will get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
+        // Send data using Fetch API
+        fetch('https://formspree.io/f/xdkgwjdy', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Form submitted successfully');
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Form submission failed. Please try again.');
+        });
     });
 }
 
