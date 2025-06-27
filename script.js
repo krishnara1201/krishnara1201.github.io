@@ -1,8 +1,18 @@
 // Custom cursor
 const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follower');
+let cursorVisible = false;
 
 document.addEventListener('mousemove', (e) => {
+    // Show cursor on first mouse movement with a slight delay
+    if (!cursorVisible) {
+        setTimeout(() => {
+            cursor.classList.add('visible');
+            cursorFollower.classList.add('visible');
+            cursorVisible = true;
+        }, 100); // 100ms delay to prevent flash
+    }
+    
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
     
@@ -10,6 +20,21 @@ document.addEventListener('mousemove', (e) => {
         cursorFollower.style.left = e.clientX + 'px';
         cursorFollower.style.top = e.clientY + 'px';
     }, 50);
+});
+
+// Hide cursor when mouse leaves the window
+document.addEventListener('mouseleave', () => {
+    cursor.classList.remove('visible');
+    cursorFollower.classList.remove('visible');
+    cursorVisible = false;
+});
+
+// Show cursor when mouse enters the window
+document.addEventListener('mouseenter', () => {
+    if (cursorVisible) {
+        cursor.classList.add('visible');
+        cursorFollower.classList.add('visible');
+    }
 });
 
 // Enlarge cursor on hoverable elements

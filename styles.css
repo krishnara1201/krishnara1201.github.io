@@ -134,6 +134,13 @@ section {
     transform: translate(-50%, -50%);
     z-index: 9999;
     transition: width 0.2s, height 0.2s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cursor.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .cursor-follower {
@@ -146,6 +153,13 @@ section {
     transform: translate(-50%, -50%);
     z-index: 9998;
     transition: 0.1s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cursor-follower.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Header */
