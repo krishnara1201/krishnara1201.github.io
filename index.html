@@ -8,7 +8,9 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="cursor"></div>
@@ -22,8 +24,8 @@
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#work_exp">Work Experience</a></li>
                 <li><a href="#work">Projects</a></li>
+                <li><a href="#work_exp">Work Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -37,9 +39,10 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="animate-text">Hello, I'm <span>Krish Lakshmi Narayanan</span>.</h1>
-                    <h2 class="animate-text delay-1">I create Data Science and Machine Learning solutions</h2>
-                    <div class="hero-cta animate-text delay-2">
+                    <span class="eyebrow animate-text">Data Science &amp; Machine Learning</span>
+                    <h1 class="animate-text delay-1">Krish Lakshmi <span>Narayanan</span></h1>
+                    <h2 class="animate-text delay-2">I build ML systems and full-stack data platforms &mdash; from production pipelines to backtesting engines and models trained from scratch.</h2>
+                    <div class="hero-cta animate-text delay-3">
                         <a href="#work" class="btn primary-btn">View My Work</a>
                         <a href="#contact" class="btn secondary-btn">Get In Touch</a>
                     </div>
@@ -69,21 +72,51 @@
                         <p>When I'm not analyzing data, you can find me playing basketball, tennis, or football, exploring creative outlets through piano, or keeping up with the latest in computational mathematics and statistics.</p>
                         <div class="skills">
                             <div class="skill">
-                                <h3>Development</h3>
+                                <h3>Languages</h3>
                                 <ul>
-                                    <li>Python (Pandas, Numpy, Scikit-learn)</li>
-                                    <li>R (Tidyverse, GGPlot)</li>
-                                    <li>SQL & NoSQL Databases</li>
-                                    <li>Cloud Computing (AWS, GCP, Azure)</li>
+                                    <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                                    <li>R (Tidyverse, GGPlot) &amp; SQL</li>
+                                    <li>Go &amp; TypeScript/JavaScript</li>
                                 </ul>
                             </div>
                             <div class="skill">
-                                <h3>Analytics</h3>
+                                <h3>Machine Learning</h3>
                                 <ul>
-                                    <li>Machine Learning (LightGBM, XGBoost, Neural Networks)</li>
-                                    <li>Data Engineering (DBT, Airflow, Snowflake)</li>
-                                    <li>A/B Testing & Experimentation</li>
-                                    <li>Data Visualization (Looker, Power BI)</li>
+                                    <li>PyTorch &amp; TensorFlow</li>
+                                    <li>XGBoost, LightGBM &amp; Neural Networks</li>
+                                    <li>Classification, regression &amp; clustering</li>
+                                </ul>
+                            </div>
+                            <div class="skill">
+                                <h3>Full-Stack &amp; Infra</h3>
+                                <ul>
+                                    <li>React, FastAPI &amp; Node</li>
+                                    <li>REST APIs &amp; microservices</li>
+                                    <li>Docker &amp; distributed systems</li>
+                                </ul>
+                            </div>
+                            <div class="skill">
+                                <h3>Experimentation &amp; Stats</h3>
+                                <ul>
+                                    <li>A/B testing &amp; experimentation frameworks</li>
+                                    <li>Bayesian &amp; frequentist methodologies</li>
+                                    <li>Causal inference &amp; hypothesis testing</li>
+                                </ul>
+                            </div>
+                            <div class="skill">
+                                <h3>Data Engineering &amp; MLOps</h3>
+                                <ul>
+                                    <li>Databricks, Airflow &amp; dbt</li>
+                                    <li>Snowflake, BigQuery &amp; Apache Spark</li>
+                                    <li>AWS, GCP &amp; Fivetran</li>
+                                </ul>
+                            </div>
+                            <div class="skill">
+                                <h3>Analytics &amp; Visualization</h3>
+                                <ul>
+                                    <li>Power BI, Looker &amp; Tableau</li>
+                                    <li>Forecasting &amp; pricing analytics</li>
+                                    <li>Cohort analysis</li>
                                 </ul>
                             </div>
                         </div>
@@ -94,6 +127,79 @@
         </section>
         
         
+        <section id="work" class="work">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">Portfolio</span>
+                    <h2>Selected Work</h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card featured">
+                        <span class="project-eyebrow">// Full-stack Platform</span>
+                        <h3>QuantTrade</h3>
+                        <p>A full-stack backtesting platform &mdash; define strategies visually or as sandboxed custom Python (with scikit-learn), then backtest against real market data with walk-forward evaluation to catch look-ahead bias. Backtests run asynchronously on Celery so the API never blocks.</p>
+                        <div class="tech-badges">
+                            <span class="badge">React</span>
+                            <span class="badge">FastAPI</span>
+                            <span class="badge">Celery</span>
+                            <span class="badge">PostgreSQL</span>
+                            <span class="badge">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://quanttrade-8djs.onrender.com/" class="project-link demo-link" target="_blank" rel="noopener">Live Demo <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://github.com/krishnara1201/quanttrade" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <span class="project-eyebrow">// A/B Testing Platform</span>
+                        <h3>Experimentation Copilot</h3>
+                        <p>A B2B experimentation platform for planning experiments, running statistical analysis, and reviewing results &mdash; built on the same experimentation workflows I've run in production at 1Password and Super.com.</p>
+                        <div class="tech-badges">
+                            <span class="badge">React</span>
+                            <span class="badge">TypeScript</span>
+                            <span class="badge">FastAPI</span>
+                            <span class="badge">Celery</span>
+                        </div>
+                        <a href="https://github.com/krishnara1201/experimentation_copilot" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="project-card">
+                        <span class="project-eyebrow">// AI Tooling</span>
+                        <h3>Code Refactor AI</h3>
+                        <p>An AST-based refactoring toolchain that scans a repo for maintainability smells, asks an LLM to generate a unified diff, then validates and applies the patch.</p>
+                        <div class="tech-badges">
+                            <span class="badge">Python</span>
+                            <span class="badge">LLM</span>
+                        </div>
+                        <a href="https://github.com/krishnara1201/code_refactor" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="project-card">
+                        <span class="project-eyebrow">// Recommendation System</span>
+                        <h3>Two-Tower Movie Recommender</h3>
+                        <p>An implicit-feedback retrieval model on MovieLens 100k &mdash; user and item towers with normalized embeddings, BPR training, Recall@K evaluation, and a FastAPI service with an explainability view.</p>
+                        <div class="tech-badges">
+                            <span class="badge">PyTorch</span>
+                            <span class="badge">FastAPI</span>
+                            <span class="badge">Docker</span>
+                        </div>
+                        <a href="https://github.com/krishnara1201/movie_reco" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="project-card">
+                        <span class="project-eyebrow">// Language Tooling</span>
+                        <h3>JSON Parser</h3>
+                        <p>A hand-written JSON lexer and recursive-descent parser in Go, with an AST layer and a browser UI for testing parses live.</p>
+                        <div class="tech-badges">
+                            <span class="badge">Go</span>
+                        </div>
+                        <a href="https://github.com/krishnara1201/json_parser" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                <div class="more-work">
+                    <a href="https://github.com/krishnara1201/" class="btn primary-btn">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+
         <section id="work_exp" class="work_exp">
             <div class="container">
                 <div class="section-header">
@@ -103,19 +209,33 @@
                 <div class="experiences">
                     <div class="experience">
                         <div class="experience-img">
+                            <img src="https://www.cibc.com/content/dam/global-assets/logos/cibc-logos/no-tagline/cibc-logo-colour-142x36.svg" alt="CIBC">
+                        </div>
+                        <div class="experience-content">
+                            <span class="experience-category">Financial Institution</span>
+                            <h3>CIBC</h3>
+                            <ul>
+                                <li>Trained and deployed an XGBoost model (0.86 AUC) to score behavioral risk across 500,000+ employee records, cutting manual review volume by 30%</li>
+                                <li>Engineered ETL pipelines processing 3B+ records in Python and Databricks, reducing end-to-end data latency by 35%</li>
+                                <li>Architected production analytics systems serving 10,000+ users with self-service Power BI dashboards embedding forecasting models</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience reverse">
+                        <div class="experience-img">
                             <img src="https://i.pcmag.com/imagery/reviews/04BeuaBbm49onPbM1tX7ENj-17..v1691085217.jpg" alt="1Password">
                         </div>
                         <div class="experience-content">
                             <span class="experience-category">Technology</span>
                             <h3>1Password</h3>
                             <ul>
-                                <li>Migrated Google Analytics data from UA to GA4, building pipelines for 2B+ rows</li>
-                                <li>Developed predictive models with LightGBM for customer interaction analysis</li>
-                                <li>Created A/B testing tools and deployed key visualizations in Looker</li>
+                                <li>Shipped LightGBM and logistic regression models combined with k-means clustering for cohort analysis, increasing website engagement by 5% through targeted funnel optimizations</li>
+                                <li>Stood up an experimentation framework and executed 5+ A/B tests using Bayesian and frequentist methodologies, boosting experimentation throughput by 40%</li>
+                                <li>Constructed ETL pipelines ingesting 2B+ clickstream and Google Analytics records into AWS, maintaining 100% data integrity across downstream reporting</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="experience reverse">
+                    <div class="experience">
                         <div class="experience-img">
                             <img src="https://mma.prnewswire.com/media/2060530/Super_com_Logo.jpg?p=facebook" alt="Super">
                         </div>
@@ -123,13 +243,13 @@
                             <span class="experience-category">Financial Technology & Travel</span>
                             <h3>Super.com</h3>
                             <ul>
-                                <li>Performed pricing experiments through A/B testing methodology</li>
-                                <li>Identified key revenue-driving segments through in-depth data investigation</li>
-                                <li>Delivered crucial datasets using SQL, Python, and Airflow DAGs</li>
+                                <li>Developed pricing and revenue optimization models using regression techniques across 1M+ transaction records, contributing to 5%+ revenue growth in key e-commerce segments</li>
+                                <li>Designed and executed 5+ A/B experiments &mdash; sample size calculations, experiment design, and post-hoc statistical analysis via Bayesian and frequentist methodologies &mdash; producing a 5% net revenue lift</li>
+                                <li>Automated 15+ production datasets and reporting workflows using Airflow, Fivetran, and dbt, raising data reliability by 45%</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="experience">
+                    <div class="experience reverse">
                         <div class="experience-img">
                             <img src="https://discovertemplate.com/wp-content/uploads/2024/04/Scotiabank.jpg" alt="Scotiabank">
                         </div>
@@ -137,80 +257,11 @@
                             <span class="experience-category">Financial Institution</span>
                             <h3>Scotiabank</h3>
                             <ul>
-                                <li>Engineered a linear programming model for advisor performance assessment</li>
-                                <li>Executed strategic ad-hocs and produced bespoke Power BI dashboards</li>
-                                <li>Improved user engagement with SBP360 through targeted content strategies</li>
+                                <li>Pioneered linear regression-based scoring models across 600+ advisors to evaluate training certification, performance, and behavioral risk, directly informing compensation and workforce planning decisions</li>
+                                <li>Applied classification and probability-of-event modeling across 100,000+ customer and advisor records to assess churn and onboarding quality, sharpening retention strategy for financial products</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="experience reverse">
-                        <div class="experience-img">
-                            <img src="https://5.imimg.com/data5/PZ/IH/PM/SELLER-97111057/max-bupa-health-insurance.jpg" alt="MaxBupa">
-                        </div>
-                        <div class="experience-content">
-                            <span class="experience-category">Insurance</span>
-                            <h3>MaxBupa Health Insurance</h3>
-                            <ul>
-                                <li>Built a logistic regression model that determined probability of customer lapse at onboarding</li>
-                                <li>Conducted cost-benefit analysis to identify non-genuine claims versus customer retention impact</li>
-                                <li>Influenced implementation of differentiated marketing/retention strategies to increase retention rates</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="work" class="work">
-            <div class="container">
-                <div class="section-header">
-                    <span class="subtitle">Portfolio</span>
-                    <h2>Selected Work</h2>
-                </div>
-                <div class="projects">
-                    <div class="project reverse">
-                        <div class="project-img">
-                            <img src="https://www.cision.com/content/dam/cision-revamp/cision-optimized/resources/articles/thumbnails/what-is-sentinent-analysis-thumbnail.png" alt="Reddit Sentiment Analysis Pipeline">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">Data Engineering & NLP</span>
-                            <h3>Reddit Sentiment Analysis Pipeline</h3>
-                            <p>A comprehensive data pipeline that extracts Reddit comments, performs sentiment analysis, and processes data using Apache Airflow, dbt, and PostgreSQL. The system automates the collection of public sentiment data from Reddit, applies multi-model sentiment analysis (VADER and TextBlob), and transforms the data through dbt models for analytics.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/krishnara1201/data_pipeline" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div class="project-img">
-                            <img src="https://cdn.pixabay.com/photo/2020/08/19/13/41/ice-hockey-5500946_1280.jpg" alt="Project 1">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">Machine Learning</span>
-                            <h3>Predicting Hockey Player Salaries</h3>
-                            <p>A machine learning model (using XGBoost) that analyzes player performance metrics and characteristics to accurately forecast NHL player salaries, helping teams optimize their salary cap allocation and identify undervalued talent</p>
-                            <div class="project-links">
-                                <a href="https://github.com/krishnara1201/hockey_project" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project reverse">
-                        <div class="project-img">
-                            <img src="https://www.kaggle.com/static/images/logos/kaggle-logo-opengraph.png" alt="Project 2">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">Machine Learning</span>
-                            <h3>Kaggle Projects</h3>
-                            <p>A repository containing all the kaggle competitions I take part in.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/krishnara1201/kaggle" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="more-work">
-                    <a href="https://github.com/krishnara1201/" class="btn primary-btn">View All Projects</a>
                 </div>
             </div>
         </section>
@@ -241,7 +292,7 @@
                             </div>
                             <div class="details">
                                 <h3>Location</h3>
-                                <p>Waterloo, ON</p>
+                                <p>Toronto, ON</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -285,11 +336,11 @@
                 <div class="footer-logo">
                     <a href="#home">KLN</a>
                 </div>
-                <p>&copy; 2025 Krish Lakshmi Narayanan. All rights reserved.</p>
+                <p>&copy; 2026 Krish Lakshmi Narayanan. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="#about">About</a>
-                    <a href="#work_exp">Work Experience</a>
                     <a href="#work">Projects</a>
+                    <a href="#work_exp">Work Experience</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>

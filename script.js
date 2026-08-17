@@ -38,7 +38,7 @@ document.addEventListener('mouseenter', () => {
 });
 
 // Enlarge cursor on hoverable elements
-const hoverables = document.querySelectorAll('a, button, .project-img, .social-links a');
+const hoverables = document.querySelectorAll('a, button, .project-card, .social-links a');
 hoverables.forEach(hoverable => {
     hoverable.addEventListener('mouseenter', () => {
         cursor.style.width = '20px';
@@ -106,7 +106,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Scroll reveal animation
-const revealElements = document.querySelectorAll('.project, .about-grid, .contact-grid, .section-header, .experience');
+const revealElements = document.querySelectorAll('.project-card, .about-grid, .contact-grid, .section-header, .experience');
 
 const revealElement = () => {
     revealElements.forEach(element => {
@@ -158,13 +158,13 @@ if (contactForm) {
 // Add this to your CSS file
 document.head.insertAdjacentHTML('beforeend', `
 <style>
-.project, .about-grid, .contact-grid, .experience, .section-header {
+.project-card, .about-grid, .contact-grid, .experience, .section-header {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.project.revealed,.experience.revealed,.about-grid.revealed, .contact-grid.revealed, .section-header.revealed {
+.project-card.revealed,.experience.revealed,.about-grid.revealed, .contact-grid.revealed, .section-header.revealed {
     opacity: 1;
     transform: translateY(0);
 }
