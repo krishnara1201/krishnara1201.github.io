@@ -587,6 +587,10 @@ nav ul li a.active:after {
     overflow: hidden;
 }
 
+.project-card.featured.full-width {
+    grid-column: 1 / -1;
+}
+
 .project-card.featured:before {
     content: '';
     position: absolute;
@@ -953,6 +957,10 @@ footer {
     }
 
     .project-card.featured {
+        grid-column: span 1;
+    }
+
+    .project-card.featured.full-width {
         grid-column: span 1;
     }
 
