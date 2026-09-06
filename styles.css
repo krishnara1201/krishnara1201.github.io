@@ -560,6 +560,7 @@ nav ul li a.active:after {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
     gap: 28px;
 }
 
