@@ -597,6 +597,28 @@ nav ul li a.active:after {
     pointer-events: none;
 }
 
+.project-media {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    background: #f4f2ec;
+    padding: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.project-card:hover .project-media {
+    transform: translateY(-4px);
+}
+
+.project-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: calc(var(--radius) - 6px);
+}
+
 .project-eyebrow {
     font-family: var(--font-mono);
     font-size: 13px;
@@ -957,6 +979,10 @@ footer {
 
     .experience-img img {
         max-height: 240px;
+    }
+
+    .project-media {
+        padding: 10px;
     }
 }
 
